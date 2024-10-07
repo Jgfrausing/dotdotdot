@@ -12,3 +12,9 @@
 !.config/
 !.config/nvim/
 !.config/nvim/**
+
+# zshrc
+!.zshrc
+
+# scripts
+!scripts/
