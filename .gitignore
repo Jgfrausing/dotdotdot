@@ -17,4 +17,4 @@
 !.zshrc
 
 # scripts
-!scripts/
+!scripts/**
