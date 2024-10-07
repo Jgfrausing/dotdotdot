@@ -39,9 +39,6 @@ elif [[ -f "$HOME/.bashrc" ]]; then
   fi
 fi
 
-echo "Installing Python..."
-brew install python
-
 echo "Installing Ripgrep..."
 brew install ripgrep
 

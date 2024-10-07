@@ -24,6 +24,9 @@ else
   exit 1
 fi
 
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Verify installation
 if command -v brew >/dev/null 2>&1; then
   echo "Homebrew successfully installed."
