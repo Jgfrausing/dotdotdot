@@ -1,5 +1,13 @@
 *
 !.gitignore
-!py-setup/*
+!py-setup/**
 !.gitconfig
-!.local/share/nvim/**
+
+# Unignore the .local/share folder
+!.local/
+!.local/share/
+
+
+!.local/share/nvim/
+!.local/share/nvim/lazy/
+!.local/share/nvim/lazy/**
