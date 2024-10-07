@@ -1,13 +1,14 @@
+# Ignore everything
 *
+
+# Do not ignore the .gitignore file itself
 !.gitignore
+
+# Do not ignore specific files and folders
 !py-setup/**
 !.gitconfig
 
-# Unignore the .local/share folder
-!.local/
-!.local/share/
-
-
-!.local/share/nvim/
-!.local/share/nvim/lazy/
-!.local/share/nvim/lazy/**
+# Unignore the nvim folder and its contents inside .config/
+!.config/
+!.config/nvim/
+!.config/nvim/**
