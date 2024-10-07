@@ -2,4 +2,4 @@
 !.gitignore
 !py-setup/*
 !.gitconfig
-
+!.local/share/nvim/**
