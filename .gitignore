@@ -5,6 +5,7 @@
 !.gitignore
 
 # Do not ignore specific files and folders
+!py-setup/
 !py-setup/**
 !.gitconfig
 
@@ -17,4 +18,5 @@
 !.zshrc
 
 # scripts
+!scripts/
 !scripts/**
