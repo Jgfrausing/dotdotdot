@@ -10,15 +10,12 @@ else
   echo "Homebrew is already installed."
 fi
 
-# Update Homebrew
 echo "Updating Homebrew..."
 brew update
 
-# Install Lazygit
 echo "Installing Lazygit..."
 brew install lazygit
 
-# Install NVM
 echo "Installing NVM (Node Version Manager)..."
 brew install nvm
 
@@ -42,27 +39,24 @@ elif [[ -f "$HOME/.bashrc" ]]; then
   fi
 fi
 
-# Install Python
 echo "Installing Python..."
 brew install python
 
-# Install Ripgrep
 echo "Installing Ripgrep..."
 brew install ripgrep
 
-# Install Docker
+echo "Installing TeamsTM..."
+brew install --cask microsoft-teams
+
 echo "Installing Docker..."
 brew install --cask docker
 
-# Install Node.js 22 using NVM
 echo "Installing Node.js 22 via NVM..."
 nvm install 22
 nvm use 22
 nvm alias default 22
 
-# Install git-checkout-interactive (gci) globally via npm
 echo "Installing git-checkout-interactive via npm..."
 npm install -g git-checkout-interactive
 
-# Completion message
 echo "All tools installed successfully!"
