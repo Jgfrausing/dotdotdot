@@ -39,6 +39,12 @@ elif [[ -f "$HOME/.bashrc" ]]; then
   fi
 fi
 
+echo "Installing Iterm2..."
+brew install iterm2
+
+echo "Installing NeoVim..."
+brew install neovim
+
 echo "Installing Ripgrep..."
 brew install ripgrep
 
@@ -55,5 +61,8 @@ nvm alias default 22
 
 echo "Installing git-checkout-interactive via npm..."
 npm install -g git-checkout-interactive
+
+echo "Install zsh and oh-my-zsh dependencies..."
+brew install zsh zsh-syntax-highlighting zsh-autosuggestions
 
 echo "All tools installed successfully!"
