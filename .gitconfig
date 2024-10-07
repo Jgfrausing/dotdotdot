@@ -1,0 +1,53 @@
+[user]
+email = jfr@mft-energy.com
+name = Jonatan Bech Ingemann Frausing
+
+[alias]
+co = checkout
+lb = !gci
+l = log --abbrev-commit --pretty=format:'%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%C(yellow)%d%Creset' --graph
+preb = pull --rebase
+fap = fetch --all --prune
+fapp = !git fetch --all --prune && git pull
+out = !git l "@{u}".. in = !git l .."{u}"
+lg = !git l --graph
+ls = !git l --stat
+la = !git l --all
+publish = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
+unpublish = !git push origin -d
+s = status -sb
+amend = commit --amend -a
+b = "!f() { echo \"$*\" | tr \" \" \"-\" | xargs git checkout -b; }; f"
+initial = "!f() { echo $(git this) | tr \"-\" \" \" | xargs git cm; }; f "
+cp = "!f() { git commit -am \"$*\" && git push; }; f"
+cm = "!f() { git commit -am \"$*\"; }; f"
+branches-merged = !git for-each-ref --merged main --format='%(committerdate:relative),%(authorname),%(refname:short)' --sort=committerdate | column -t -s ','
+branches-no-merged = !git for-each-ref --no-merged main --format='%(committerdate:relative),%(authorname),%(refname:short)' --sort=committerdate | column -t -s ','
+branches = !echo Merged: && git branches-merged && echo '\nNot merged:' && git branches-no-merged
+delete-local = !git branch --merged ${1} | grep -v ${1} | xargs git branch -d
+ls-gone = "!git branch -vv | grep ': gone]'|  grep -v "\\*" | awk '{ print $1; }'"
+edit = !nvim ~/.gitconfig
+open = "!f() { git --git-dir=$1/.git ls-remote --get-url | sed -En 's/.*github.com:(.*)/https:\\/\\/github.com\\/\\1/p' | xargs open ;}; f"
+this = rev-parse --abbrev-ref HEAD
+filediff = !git diff --name-only ${1}..$(git rev-parse --abbrev-ref HEAD) ls-gone = "!git branch -vv | grep ': gone]'|  grep -v "\\*" | awk '{ print $1; }'"
+ls-gone = "!git branch -vv | grep ': gone]'|  grep -v "\\*" | awk '{ print $1; }'"
+delete-gone = "!git branch -D $(git ls-gone)"
+ls-new = !git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'
+noob = !echo Gone: && git ls-gone && echo '\nNew:' && git ls-new
+pr = !gh pr create
+ignore-local = !git fetch && git reset --hard origin/$(git this)
+
+[rerere]
+    enabled = true
+
+[pull]
+rebase = false
+
+
+[core]
+editor = vim
+
+useHttpPath = true
+
+[sequence]
+editor = code --wait
